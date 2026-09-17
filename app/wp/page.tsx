@@ -68,11 +68,11 @@ export default async function WhatsAppRedirectPage({
 👤 Şagird: ${studentName}
 📚 Kurs: ${courseName}
 🧑 Müəllim: ${teacherName}
-🗓 İlk dərsin tarixi: ${firstLessonDate.format("DD.MM.YYYY")}
 🗓 Ödəniş dövrü: ${startDate.format("DD.MM.YYYY")} - ${endDate.format("DD.MM.YYYY")}
+➡️ Növbəti ödəniş tarixi: ${afterEndDate.format("DD.MM.YYYY")}
+🗓 İlk dərsin tarixi: ${firstLessonDate.format("DD.MM.YYYY")}
 💰 Məbləğ: ${amount} AZN
 📅 Ödəniş tarixi: ${paymentDate.format("DD.MM.YYYY")}
-➡️ Növbəti ödəniş tarixi: ${afterEndDate.format("DD.MM.YYYY")}
 
 Hər hansı sualınız olarsa, bu nömrə ilə bizimlə əlaqə saxlaya bilərsiniz.
 
