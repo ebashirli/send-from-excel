@@ -53,7 +53,7 @@ export default async function WhatsAppRedirectPage({
   
   const paymentDates = rest.filter(el=>el);
   const paymentCount = paymentDates.length;
-
+  const firstLessonDate = dayjs("1900-01-01").add(Number(firstLesson), "day");
   const startDate = dayjs("1900-01-01").add(Number(firstLesson)-2, "day").add(paymentCount - 1, "month");
   const endDate = startDate.add(1, "month").subtract(1, "day");
   const paymentDate = dayjs("1900-01-01").add(Number(paymentDates.at(-1))-2, "day");
@@ -68,10 +68,11 @@ export default async function WhatsAppRedirectPage({
 👤 Şagird: ${studentName}
 📚 Kurs: ${courseName}
 🧑 Müəllim: ${teacherName}
-🗓  Ödəniş dövrü: ${startDate.format("DD.MM.YYYY")} - ${endDate.format("DD.MM.YYYY")}
+🗓 Başlanğıc dərs: ${firstLessonDate.format("DD.MM.YYYY")}
+🗓 Ödəniş dövrü: ${startDate.format("DD.MM.YYYY")} - ${endDate.format("DD.MM.YYYY")}
 💰 Məbləğ: ${amount} AZN
 📅 Ödəniş tarixi: ${paymentDate.format("DD.MM.YYYY")}
-➡️  Növbəti ödəniş tarixi: ${afterEndDate.format("DD.MM.YYYY")}
+➡️ Növbəti ödəniş tarixi: ${afterEndDate.format("DD.MM.YYYY")}
 
 Hər hansı sualınız olarsa, bu nömrə ilə bizimlə əlaqə saxlaya bilərsiniz.
 
