@@ -19,7 +19,7 @@ export default async function WhatsAppRedirectPage({
   searchParams: Promise<SearchParams>;
 }) {
   const params = await searchParams;
-  console.log("Received search params:", {params});
+  
   const [
     studentId,
     teacherName,
@@ -37,8 +37,8 @@ export default async function WhatsAppRedirectPage({
   ] = (params?.row as string).split("|") || ["", ""];
 
   const phone = normalizePhone(firstValue(rawPhone));
-  
-  
+
+    
   if (!phone) {
     return (
       <main className="flex flex-1 items-center justify-center p-8 text-center">
@@ -53,7 +53,7 @@ export default async function WhatsAppRedirectPage({
   
   const paymentDates = rest.filter(el=>el);
   const paymentCount = paymentDates.length;
-  const firstLessonDate = dayjs("1900-01-01").add(Number(firstLesson)-1, "day");
+  const firstLessonDate = dayjs("1900-01-01").add(Number(firstLesson)-2, "day");
   const startDate = dayjs("1900-01-01").add(Number(firstLesson)-2, "day").add(paymentCount - 1, "month");
   const endDate = startDate.add(1, "month").subtract(1, "day");
   const paymentDate = dayjs("1900-01-01").add(Number(paymentDates.at(-1))-2, "day");
