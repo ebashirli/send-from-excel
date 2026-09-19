@@ -53,7 +53,7 @@ export default async function WhatsAppRedirectPage({
   
   const paymentDates = rest.filter(el=>el);
   const paymentCount = paymentDates.length;
-  const firstLessonDate = dayjs("1900-01-01").add(Number(firstLesson), "day");
+  const firstLessonDate = dayjs("1900-01-01").add(Number(firstLesson)-1, "day");
   const startDate = dayjs("1900-01-01").add(Number(firstLesson)-2, "day").add(paymentCount - 1, "month");
   const endDate = startDate.add(1, "month").subtract(1, "day");
   const paymentDate = dayjs("1900-01-01").add(Number(paymentDates.at(-1))-2, "day");
