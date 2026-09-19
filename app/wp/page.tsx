@@ -19,7 +19,7 @@ export default async function WhatsAppRedirectPage({
   searchParams: Promise<SearchParams>;
 }) {
   const params = await searchParams;
-  
+
   const [
     studentId,
     teacherName,
@@ -79,9 +79,7 @@ Hər hansı sualınız olarsa, bu nömrə ilə bizimlə əlaqə saxlaya bilərsi
 One Academy
 📞 051 388 64 11`;
 
-  console.log("Redirecting to WhatsApp with message:", message);
-
-  const url = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`
+const url = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`
 
   redirect(url);
 }
